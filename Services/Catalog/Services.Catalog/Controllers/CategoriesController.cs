@@ -9,7 +9,7 @@ namespace Services.Catalog.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-internal class CategoriesController : CustomBaseController
+public class CategoriesController : CustomBaseController
 {
     private readonly ICategoryService _categoryService;
 
@@ -17,6 +17,8 @@ internal class CategoriesController : CustomBaseController
     {
         _categoryService = categoryService;
     }
+
+    [HttpGet]
     public async Task<IActionResult> GetAll()
     {
         var response = await _categoryService.GetAllAsync();
