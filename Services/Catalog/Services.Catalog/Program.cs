@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using Services.Catalog.Services;
 using Services.Catalog.Settings;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>

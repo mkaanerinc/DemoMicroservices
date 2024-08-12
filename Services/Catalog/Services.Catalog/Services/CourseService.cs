@@ -85,7 +85,7 @@ internal class CourseService : ICourseService
         return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), StatusCodes.Status201Created);
     }
 
-    public async Task<Response<NoContent>> CreateAsync(CourseUpdateDto courseUpdateDto)
+    public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
     {
         var updateCourse = _mapper.Map<Course>(courseUpdateDto);
 
