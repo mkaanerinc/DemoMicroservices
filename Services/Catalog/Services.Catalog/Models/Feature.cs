@@ -1,6 +1,6 @@
 ﻿namespace Services.Catalog.Models;
 
-public class Feature
+internal class Feature
 {
     public int Duration { get; set; }
 }

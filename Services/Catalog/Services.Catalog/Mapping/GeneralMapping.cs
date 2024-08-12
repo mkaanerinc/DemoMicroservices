@@ -4,7 +4,7 @@ using Services.Catalog.Models;
 
 namespace Services.Catalog.Mapping;
 
-public class GeneralMapping : Profile
+internal class GeneralMapping : Profile
 {
     public GeneralMapping()
     {

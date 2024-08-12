@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using Services.Catalog.Services;
 using Services.Catalog.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,9 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 {
     return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
 });
+
+builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<ICourseService,CourseService>();
 
 var app = builder.Build();
 
