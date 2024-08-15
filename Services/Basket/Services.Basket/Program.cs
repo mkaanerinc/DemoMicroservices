@@ -17,6 +17,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     options.Authority = builder.Configuration["IdentityServerUrl"];
     options.Audience = "resource_basket";
     options.RequireHttpsMetadata = false;
+    options.MapInboundClaims = false;
 });
 
 builder.Services.AddHttpContextAccessor();
