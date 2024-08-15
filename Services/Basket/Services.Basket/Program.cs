@@ -1,10 +1,15 @@
 using Microsoft.Extensions.Options;
 using Services.Basket.Services;
 using Services.Basket.Settings;
+using Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ISharedIdentityService,SharedIdentityService>();
+builder.Services.AddScoped<IBasketService,BasketService>();
 
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
 
