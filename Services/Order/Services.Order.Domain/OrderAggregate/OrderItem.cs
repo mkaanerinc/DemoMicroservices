@@ -16,6 +16,11 @@ public class OrderItem : Entity
 
     // OrderId is not here because we use Shadow Property from EF Core feature
 
+    public OrderItem()
+    {
+        
+    }
+
     public OrderItem(string productId, string productName, string pictureUrl, decimal price)
     {
         ProductId = productId;
