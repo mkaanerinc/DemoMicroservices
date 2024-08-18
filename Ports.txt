@@ -6,3 +6,4 @@
 	- Order API => http://localhost:5015
 	- FakePayment API => "http://localhost:5016"
 - Identity Server => http://localhost:5001
+- Gateway => http://localhost:5000
