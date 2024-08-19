@@ -1,4 +1,6 @@
 using WebApp.Models;
+using WebApp.Services;
+using WebApp.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,9 @@ builder.Services.Configure<ClientSettings>(builder.Configuration
     .GetSection("ClientSettings"));
 builder.Services.Configure<ServiceApiSettings>(builder.Configuration
     .GetSection("ServiceApiSettings"));
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient<IIdentityService, IdentityService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
