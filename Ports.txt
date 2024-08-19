@@ -7,3 +7,4 @@
 	- FakePayment API => "http://localhost:5016"
 - Identity Server => http://localhost:5001
 - Gateway => http://localhost:5000
+- Web Application => http://localhost:5010
